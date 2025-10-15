@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workplace Solutions – Connecting Employers with Talent</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-oBWdlEYUoMRn8DcRbTy9VnE3NQIdlZwIYdMb9RfMge+leP4YDbi0wzfopWn7UXQ8sGdzAFhlqmcuP5HTh3YtKQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Swiper (for hero + testimonials) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
+
+  <!-- GSAP (optional) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+  <!-- Custom JS -->
+  <script src="js/option6.js" defer></script>
+</head>
+<body class="home">
+  <!-- Preloader -->
+  <div id="preloader"><div class="spinner"></div></div>
+
+  <!-- Top Bar -->
+  <div class="top-bar top-bar--clean">
+    <div class="container topbar-grid">
+      <div class="contact-info">
+        <a class="contact-chip" href="tel:+26622325020" aria-label="Call Workplace Solutions">
+          <i class="fa-solid fa-phone"></i><span>+266&nbsp;2232&nbsp;5020</span>
+        </a>
+        <a class="contact-chip" href="mailto:info@workplacesolutions.co.ls" aria-label="Email Workplace Solutions">
+          <i class="fa-solid fa-envelope"></i><span>info@workplacesolutions.co.ls</span>
+        </a>
+        <span class="contact-chip">
+          <i class="fa-regular fa-clock"></i><span>8:00AM – 5:00PM Mon–Fri</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="Workplace Solutions logo" /></a>
+      <button class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+
+        <li class="nav-item dropdown"><a href="candidates.html">Candidates</a>
+          <ul class="dropdown-menu">
+            <li><a href="https://webapp.placementpartner.com/wi/application_form.php?id=workplacesolutions" target="_blank" rel="noopener">Submit your CV</a></li>
+            <li><a href="how-to-apply.html">How to apply</a></li>
+            <li><a href="https://webapp.placementpartner.com/wi/weblinks.php?id=workplacesolutions" target="_blank" rel="noopener">Vacancies</a></li>
+          </ul>
+        </li>
+
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+
+        <li class="nav-item dropdown"><a href="downloads.html">Downloads</a>
+          <ul class="dropdown-menu">
+            <li><a href="legal-documents.html">Legal Documents</a></li>
+            <li><a href="papers.html">Papers</a></li>
+            <li><a href="company-profile.html">Company Profile</a></li>
+          </ul>
+        </li>
+
+        <li><a href="https://webapp.placementpartner.com/wi/weblinks.php?id=workplacesolutions" target="_blank" rel="noopener" class="btn btn-primary btn-small">Available posts</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+    <!-- HOME-ONLY: Hero Slideshow (namespaced, no conflicts) -->
+    <!-- HOME-ONLY: Hero Slideshow -->
+<section class="hero-slider swiper" data-autoplay-delay="6000" data-transition-speed="1200">
+  <div class="swiper-wrapper">
+
+    <!-- Slide 1 -->
+    <div class="hero-slide swiper-slide" >
+      <img class="hero-bg" src="images/hero-meeting.png" alt="" loading="eager">
+      <div class="hero-overlay">
+        <div class="container">
+          <h1 class="hero-title">Do you have the right people for the future you envision?</h1>
+          <p class="hero-subtitle">Tailored, reliable HR solutions for Lesotho’s top employers and professionals.</p>
+          <div class="btn-group">
+            <a href="contact.html" class="btn btn-primary">Request Services</a>
+            <a href="https://webapp.placementpartner.com/wi/application_form.php?id=workplacesolutions"
+               target="_blank" rel="noopener" class="btn btn-secondary">Submit Your CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="hero-slide swiper-slide">
+      <img class="hero-bg" src="images/hero-construction.png" alt="" loading="lazy">
+      <div class="hero-overlay">
+	  <div class="container">
+	    <h1 class="hero-title">Do you have the right people for the future you envision?</h1>
+          <p class="hero-subtitle">Tailored, reliable HR solutions for Lesotho’s top employers and professionals.</p>
+          <div class="btn-group">
+            <a href="contact.html" class="btn btn-primary">Request Services</a>
+            <a href="https://webapp.placementpartner.com/wi/application_form.php?id=workplacesolutions"
+               target="_blank" rel="noopener" class="btn btn-secondary">Submit Your CV</a>
+          </div>
+	  </div></div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="hero-slide swiper-slide">
+      <img class="hero-bg" src="images/hero-mining.png" alt="" loading="lazy">
+      <div class="hero-overlay">
+	  <div class="container">
+	    <h1 class="hero-title">Do you have the right people for the future you envision?</h1>
+          <p class="hero-subtitle">Tailored, reliable HR solutions for Lesotho’s top employers and professionals.</p>
+          <div class="btn-group">
+            <a href="contact.html" class="btn btn-primary">Request Services</a>
+            <a href="https://webapp.placementpartner.com/wi/application_form.php?id=workplacesolutions"
+               target="_blank" rel="noopener" class="btn btn-secondary">Submit Your CV</a>
+          </div>
+	  </div></div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="hero-slide swiper-slide">
+      <img class="hero-bg" src="images/hero-farming.png" alt="" loading="lazy">
+      <div class="hero-overlay">
+	  <div class="container">
+	    <h1 class="hero-title">Do you have the right people for the future you envision?</h1>
+          <p class="hero-subtitle">Tailored, reliable HR solutions for Lesotho’s top employers and professionals.</p>
+          <div class="btn-group">
+            <a href="contact.html" class="btn btn-primary">Request Services</a>
+            <a href="https://webapp.placementpartner.com/wi/application_form.php?id=workplacesolutions"
+               target="_blank" rel="noopener" class="btn btn-secondary">Submit Your CV</a>
+          </div>
+	  </div></div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="hero-slide swiper-slide">
+      <img class="hero-bg" src="images/hero-psychometric.png" alt="" loading="lazy">
+      <div class="hero-overlay">
+	  <div class="container">
+	    <h1 class="hero-title">Do you have the right people for the future you envision?</h1>
+          <p class="hero-subtitle">Tailored, reliable HR solutions for Lesotho’s top employers and professionals.</p>
+          <div class="btn-group">
+            <a href="contact.html" class="btn btn-primary">Request Services</a>
+            <a href="https://webapp.placementpartner.com/wi/application_form.php?id=workplacesolutions"
+               target="_blank" rel="noopener" class="btn btn-secondary">Submit Your CV</a>
+          </div>
+	  </div></div>
+    </div>
+
+  </div>
+
+  <!-- Nav + pagination -->
+  <button class="hero-nav hero-prev" aria-label="Previous slide"><i class="fa-solid fa-circle-chevron-left"></i></button>
+  <button class="hero-nav hero-next" aria-label="Next slide"><i class="fa-solid fa-circle-chevron-right"></i></button>
+  <div class="hero-pagination"></div>
+</section>
+
+
+    <!-- Who We Help -->
+    <section class="who-we-help section">
+      <div class="container">
+        <h2 class="section-title reveal fade-in">Who We Help</h2>
+        <div class="cards">
+          <div class="card reveal fade-in">
+            <i class="fa-solid fa-building"></i>
+            <h3>Employers</h3>
+            <p>We partner with corporates, NGOs, and parastatals to source top talent and streamline HR processes.</p>
+          </div>
+          <div class="card reveal fade-in delay-1">
+            <i class="fa-solid fa-users"></i>
+            <h3>Candidates</h3>
+            <p>We support job seekers with career guidance, CV refinement, and placement into roles that fit their ambitions.</p>
+          </div>
+          <div class="card reveal fade-in delay-2">
+            <i class="fa-solid fa-handshake"></i>
+            <h3>Partners</h3>
+            <p>We collaborate with training providers and industry partners to empower people and organisations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Solutions -->
+    <section class="solutions section">
+      <div class="container">
+        <h2 class="section-title reveal fade-in">Our Solutions</h2>
+        <div class="cards">
+          <div class="card reveal fade-in">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Human Capital Services</h3>
+            <p>Efficient, client-focused services entailing Recruitment and Temporary Employment Services (TES), Disciplinary Hearings, Payroll Management, Exit Management and Policy Development.</p>
+          </div>
+          <div class="card reveal fade-in delay-1">
+            <i class="fa-solid fa-user-shield"></i>
+            <h3>Training</h3>
+            <p>Diagnostics-based programs aimed at improving employee engagement and managing organizational change.</p>
+          </div>
+          <div class="card reveal fade-in delay-2">
+            <i class="fa-solid fa-brain"></i>
+            <h3>Psychometric Assessments</h3>
+            <p>Assess candidates with scientifically valid and reliable assessments to guarantee culture-fit and performance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="stats">
+      <div class="container">
+        <div class="stat"><div class="number" data-target="500">0</div><p>Hires Made</p></div>
+        <div class="stat"><div class="number" data-target="1000">0</div><p>CVs Submitted</p></div>
+        <div class="stat"><div class="number" data-target="50">0</div><p>Corporate Clients</p></div>
+        <div class="stat"><div class="number" data-target="95">0</div><p>% Satisfaction Rate</p></div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title reveal fade-in">What Our Clients Say</h2>
+        <div class="swiper-container reveal fade-in delay-1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial">
+                <p>“Workplace Solutions helped us build a high-performing team faster than we thought possible. Their professionalism and warmth are unmatched.”</p>
+                <div class="author">— Nolwazi Moeng, Finance Manager</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial">
+                <p>“From compliance to culture fit, they take care of everything. We now have credible people who embody our values.”</p>
+                <div class="author">— Mrs. M, CEO</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial">
+                <p>“Their applicant tracking and psychometric assessments ensure we hire not just good, but the right people.”</p>
+                <div class="author">— Mpho, Entrepreneur</div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secondary CTA -->
+    <section class="cta section cta-two">
+      <div class="container">
+        <h2>Ready to Transform Your Workforce?</h2>
+        <p>Let Workplace Solutions find the perfect match for your team. Start your journey today.</p>
+        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact section">
+      <div class="container flex">
+        <div class="contact-info">
+          <h2>Contact Us</h2>
+          <p><i class="fa-solid fa-location-dot"></i> Our address goes here, Corporate Road, Maseru, Lesotho</p>
+          <p><i class="fa-solid fa-phone"></i> +266 2232 5020</p>
+          <p><i class="fa-solid fa-envelope"></i> info@workplacesolutions.co.ls</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form action="#" method="post">
+            <div class="form-group"><input type="text" name="name" placeholder="Your Name" required /></div>
+            <div class="form-group"><input type="email" name="email" placeholder="Your Email" required /></div>
+            <div class="form-group"><textarea name="message" placeholder="Your Message" required></textarea></div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="candidates.html">Candidates</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Downloads</h4>
+          <ul>
+            <li><a href="legal-documents.html">Legal Documents</a></li>
+            <li><a href="papers.html">Papers</a></li>
+            <li><a href="company-profile.html">Company Profile</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Stay Connected</h4>
+          <p>Subscribe to our newsletter for updates.</p>
+          <form action="#" method="post">
+            <input type="email" placeholder="Your Email" required />
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+          <div class="social-links" style="margin-top: 10px;">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 Workplace Solutions. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <!-- Sticky Social Footer -->
+  <div class="sticky-social">
+    <div class="container social-rail">
+      <a href="#" class="s-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+      <a href="#" class="s-icon" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i><span>Twitter/X</span></a>
+      <a href="#" class="s-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
+      <a href="#" class="s-icon" aria-label="Instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+      <a href="#" class="s-icon" aria-label="YouTube"><i class="fab fa-youtube"></i><span>YouTube</span></a>
+    </div>
+  </div>
+
+  <!-- Hide preloader on load -->
+  <script>
+    window.addEventListener('load', function () {
+      const preloader = document.getElementById('preloader');
+      if (preloader) preloader.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
