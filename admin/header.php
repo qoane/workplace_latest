@@ -2,6 +2,19 @@
 <?php require_admin(); ?>
 <?php
 $siteName = site_setting($pdo, 'site_name', 'Workplace Solutions');
+$logoSetting = site_setting($pdo, 'logo_path', '');
+$logoAsset = $logoSetting !== '' ? $logoSetting : 'images/logo.svg';
+$logoUrl = base_url($logoAsset);
+$currentScript = basename($_SERVER['SCRIPT_NAME']);
+$navItems = [
+    ['label' => 'Dashboard', 'icon' => 'fa-gauge', 'path' => 'admin/dashboard.php'],
+    ['label' => 'Pages', 'icon' => 'fa-file-lines', 'path' => 'admin/pages.php'],
+    ['label' => 'Site Sections', 'icon' => 'fa-layer-group', 'path' => 'admin/site_sections.php'],
+    ['label' => 'Menus', 'icon' => 'fa-bars', 'path' => 'admin/menus.php'],
+    ['label' => 'Settings', 'icon' => 'fa-gear', 'path' => 'admin/settings.php'],
+];
+$adminUser = $_SESSION['admin_username'] ?? 'Administrator';
+$initials = strtoupper(substr($adminUser, 0, 1));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,16 +72,58 @@ $siteName = site_setting($pdo, 'site_name', 'Workplace Solutions');
         });
     </script>
 </head>
-<body>
-<header>
-    <h1><?= h($siteName) ?> &mdash; Admin</h1>
-    <nav>
-        <a href="<?= base_url('admin/dashboard.php') ?>">Dashboard</a>
-        <a href="<?= base_url('admin/pages.php') ?>">Pages</a>
-        <a href="<?= base_url('admin/site_sections.php') ?>">Site Sections</a>
-        <a href="<?= base_url('admin/menus.php') ?>">Menus</a>
-        <a href="<?= base_url('admin/settings.php') ?>">Settings</a>
-        <a href="<?= base_url('admin/logout.php') ?>">Logout</a>
-    </nav>
-</header>
-<main>
+<body class="admin-body">
+<div class="admin-layout">
+    <aside class="admin-sidebar">
+        <div class="sidebar-brand">
+            <a href="<?= base_url('admin/dashboard.php') ?>" class="brand-link">
+                <img src="<?= h($logoUrl) ?>" alt="<?= h($siteName) ?> logo" class="brand-logo">
+                <span class="brand-name"><?= h($siteName) ?></span>
+            </a>
+            <a class="visit-site" href="<?= base_url('/') ?>" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                <span>View site</span>
+            </a>
+        </div>
+        <nav class="admin-nav" aria-label="Admin navigation">
+            <?php foreach ($navItems as $item):
+                $isActive = $currentScript === basename($item['path']);
+            ?>
+                <a class="nav-item<?= $isActive ? ' is-active' : '' ?>" href="<?= base_url($item['path']) ?>">
+                    <i class="fa-solid <?= h($item['icon']) ?>" aria-hidden="true"></i>
+                    <span><?= h($item['label']) ?></span>
+                </a>
+            <?php endforeach; ?>
+        </nav>
+        <div class="sidebar-meta">
+            <p class="sidebar-version">CMS status: <span class="badge badge-live">Live</span></p>
+            <p class="sidebar-help">Need assistance? <a href="mailto:info@workplacesolutions.co.ls">Contact support</a></p>
+        </div>
+    </aside>
+    <div class="admin-main">
+        <header class="admin-topbar">
+            <div class="topbar-content">
+                <div class="topbar-context">
+                    <h1><?= h($siteName) ?> Admin Console</h1>
+                    <p>Manage your pages, menus, sections and branding from a single, unified hub.</p>
+                </div>
+                <div class="topbar-actions">
+                    <a class="btn btn-primary" href="<?= base_url('admin/page_edit.php') ?>">
+                        <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                        <span>New Page</span>
+                    </a>
+                    <a class="btn btn-secondary" href="<?= base_url('admin/settings.php') ?>">
+                        <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+                        <span>Site Settings</span>
+                    </a>
+                </div>
+                <div class="topbar-user" aria-label="Administrator profile">
+                    <span class="user-avatar" aria-hidden="true"><?= h($initials) ?></span>
+                    <div class="user-meta">
+                        <span class="user-name"><?= h($adminUser) ?></span>
+                        <a class="user-logout" href="<?= base_url('admin/logout.php') ?>">Sign out</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="admin-content">
