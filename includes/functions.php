@@ -2,7 +2,31 @@
 function base_path(): string
 {
     global $config;
-    return trim($config['app']['base_path'] ?? '', '/');
+
+    static $cached = null;
+    if ($cached !== null) {
+        return $cached;
+    }
+
+    $configured = trim($config['app']['base_path'] ?? '', '/');
+    if ($configured !== '') {
+        return $cached = $configured;
+    }
+
+    $documentRoot = $_SERVER['DOCUMENT_ROOT'] ?? '';
+    $appRoot = realpath(__DIR__ . '/..');
+
+    if ($documentRoot && $appRoot) {
+        $documentRoot = rtrim(str_replace('\\', '/', $documentRoot), '/');
+        $appRoot = str_replace('\\', '/', $appRoot);
+
+        if (strpos($appRoot, $documentRoot) === 0) {
+            $detected = trim(substr($appRoot, strlen($documentRoot)), '/');
+            return $cached = $detected;
+        }
+    }
+
+    return $cached = '';
 }
 
 function base_url(string $path = ''): string
