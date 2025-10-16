@@ -401,7 +401,9 @@ function insert_menu_items(PDO $pdo, int $menuId, array $items, ?int $parentId):
         <label>Password<input type="password" name="db_pass" value="<?= htmlspecialchars($_POST['db_pass'] ?? '', ENT_QUOTES) ?>"></label>
 
         <h2>Application</h2>
-        <label>Base Path (e.g. work) <input type="text" name="base_path" value="<?= htmlspecialchars($_POST['base_path'] ?? 'work', ENT_QUOTES) ?>"></label>
+        <label>Base Path (optional, e.g. work)
+            <input type="text" name="base_path" value="<?= htmlspecialchars($_POST['base_path'] ?? '', ENT_QUOTES) ?>">
+        </label>
 
         <h2>Admin User</h2>
         <label>Username<input type="text" name="admin_user" value="<?= htmlspecialchars($_POST['admin_user'] ?? 'admin', ENT_QUOTES) ?>" required></label>

@@ -8,7 +8,8 @@ return [
         'charset' => 'utf8mb4',
     ],
     'app' => [
-        'base_path' => '/work',
+        // Leave empty to auto-detect when the site is in a sub-directory
+        'base_path' => '',
         'session_name' => 'workplace_admin',
     ],
 ];
