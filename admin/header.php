@@ -9,25 +9,53 @@ $siteName = site_setting($pdo, 'site_name', 'Workplace Solutions');
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?= h($siteName) ?> &mdash; Admin</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
-    <style>
-        body { padding: 2rem; }
-        nav a { margin-right: 1rem; }
-        textarea { min-height: 250px; }
-        .menu-tree ul { list-style: none; padding-left: 1.5rem; }
-    </style>
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-oBWdlEYUoMRn8DcRbTy9VnE3NQIdlZwIYdMb9RfMge+leP4YDbi0wzfopWn7UXQ8sGdzAFhlqmcuP5HTh3YtKQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="<?= base_url('css/admin.css') ?>" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            if (document.querySelector('.rich-editor')) {
-                tinymce.init({
-                    selector: '.rich-editor',
-                    plugins: 'link lists table code image media',
-                    toolbar: 'undo redo | styleselect | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image media | code',
-                    height: 400,
-                    convert_urls: false
-                });
+        document.addEventListener('DOMContentLoaded', () => {
+            const editors = document.querySelectorAll('.rich-editor');
+            if (!editors.length || !window.ClassicEditor) {
+                return;
             }
+
+            editors.forEach((textarea) => {
+                ClassicEditor.create(textarea, {
+                    toolbar: {
+                        items: [
+                            'undo',
+                            'redo',
+                            '|',
+                            'heading',
+                            '|',
+                            'bold',
+                            'italic',
+                            'link',
+                            '|',
+                            'bulletedList',
+                            'numberedList',
+                            '|',
+                            'blockQuote',
+                            'insertTable'
+                        ]
+                    },
+                    link: {
+                        decorators: {
+                            addTargetToExternalLinks: {
+                                mode: 'automatic',
+                                callback: (url) => /^https?:\/\//.test(url),
+                                attributes: {
+                                    target: '_blank',
+                                    rel: 'noopener'
+                                }
+                            }
+                        }
+                    }
+                }).catch((error) => console.error('CKEditor init failed', error));
+            });
         });
     </script>
 </head>
